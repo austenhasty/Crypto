@@ -2,7 +2,14 @@ import java.util.*;
 
 public class Crypto {
     public static void main(String[] args) {
-
+        Scanner input = new Scanner(System.in);
+        System.out.println("Hello! Welcome to the Crypto Application");
+        System.out.println();
+        System.out.print("Please enter some text to encrypt: ");
+        String text = input.nextLine();
+        System.out.println();
+        System.out.print("Please enter a number for your encryption key: ");
+        int num = input.nextInt();
     }
 
     public static String normalizeText(String text) {
