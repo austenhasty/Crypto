@@ -11,7 +11,15 @@ public class Crypto {
     }
 
     public static String caesarify(String text, int num) {
+        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String shiftAlphabet = shiftAlphabet(num);
+        String newText = "";
 
+        for (int i = 0; i < text.length(); i++) {
+            int placeholder = alphabet.indexOf(text.substring(i, i + 1));
+            newText += shiftAlphabet.substring(placeholder, placeholder + 1);
+        }
+        return newText;
     }
 
     public static String shiftAlphabet(int shift) {
