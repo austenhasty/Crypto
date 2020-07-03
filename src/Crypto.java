@@ -48,4 +48,21 @@ public class Crypto {
         }
         return result;
     }
+
+    public static String groupify(String text, int size) {
+        String newText = "";
+        while (text.length() >= size) {
+            String group = text.substring(0, size);
+            text = text.substring(size);
+            newText = newText + group + " ";
+        }
+        if (text.length() != 0) {
+            newText = newText + text;
+
+            for (int i = 0; i < size - text.length(); i++) {
+                newText = newText + "x";
+            }
+        }
+        return newText;
+    }
 }
