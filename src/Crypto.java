@@ -10,6 +10,11 @@ public class Crypto {
         System.out.println();
         System.out.print("Please enter a number for your encryption key: ");
         int num = input.nextInt();
+        System.out.println();
+        System.out.print("Please enter the group length for your encryption: ");
+        int size = input.nextInt();
+        System.out.print("Your encrypted text is: ");
+        System.out.println(encryptString(text, num, size));
     }
 
     public static String normalizeText(String text) {
@@ -64,5 +69,12 @@ public class Crypto {
             }
         }
         return newText;
+    }
+
+    public static String encryptString(String text, int num, int size) {
+        text = normalizeText(text);
+        text = caesarify(text, num);
+        text = groupify(text, size);
+        return text;
     }
 }
